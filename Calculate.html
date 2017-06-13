@@ -44,7 +44,7 @@
             <option value="divide">/</option>
           </select>
         </p>
-        <button type="button" id="calculate">Calculate</button>
+        <button type="button" id="calculate" onclick="bereken()">Calculate</button>
         <p class="result">Result: <strong id="result">-</strong></p>
     </form>
 
@@ -69,8 +69,13 @@
       
     <!-- JavaScript - better to put code in external JS file -->    
     <script>
+        function bereken() {
+            var waarde = document.getElementById("operation").value;
+            var aantal = document.getElementById("numbers").value;
+            var resultaat = aantal * aantal * aantal;
+            document.getElementById("result").innerHTML = resultaat;
+        }
 
-        
         // Write your JS code here
 
         
