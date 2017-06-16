@@ -65,15 +65,68 @@
     Numbers:    30, 2, 5
     Operation:  /
     Result:     3         ( = 30 / 2 / 5 )
+    
+    var cijfer = [7, 5, 9]
+    var totaal = 0;
+    
+    <!--for (i = 0; i < resultaat.length; i++) { 
+        totaal = totaal + cijfers[i] ;
+    }
+    
+    console.log(totaal); -->
     </pre>
       
     <!-- JavaScript - better to put code in external JS file -->    
     <script>
         function bereken() {
-            var waarde = document.getElementById("operation").value;
-            var aantal = document.getElementById("numbers").value;
-            var resultaat = aantal * aantal * aantal;
-            document.getElementById("result").innerHTML = resultaat;
+            var operatie = document.getElementById("operation").value
+            if (operatie == "sum") {
+                var waarde = document.getElementById("operation").value;
+                var aantal = document.getElementById("numbers").value;
+                var resultaat = aantal.split(",");
+                var berekenen = 0;
+            
+                for (var i = 0; i < resultaat.length; i++) { 
+                    berekenen = berekenen + parseFloat(resultaat[i]);
+                }
+                document.getElementById("result").innerHTML = berekenen;
+                }
+            
+            if (operatie == "substract") {
+                var waarde = document.getElementById("operation").value;
+                var aantal = document.getElementById("numbers").value;
+                var resultaat = aantal.split(",");
+                var berekenen = parseFloat(resultaat[0]);
+            
+                for (var i = 1; i < resultaat.length; i++) { 
+                    berekenen = berekenen - parseFloat(resultaat[i]);
+                }
+                document.getElementById("result").innerHTML = berekenen;
+            }
+            
+            if (operatie == "multiply") {
+                var waarde = document.getElementById("operation").value;
+                var aantal = document.getElementById("numbers").value;
+                var resultaat = aantal.split(",");
+                var berekenen = parseFloat(resultaat[0]);
+            
+                for (var i = 1; i < resultaat.length; i++) { 
+                    berekenen = berekenen * parseFloat(resultaat[i]);
+                }
+                document.getElementById("result").innerHTML = berekenen;
+            }
+            
+            if (operatie == "divide") {
+                var waarde = document.getElementById("operation").value;
+                var aantal = document.getElementById("numbers").value;
+                var resultaat = aantal.split(",");
+                var berekenen = parseFloat(resultaat[0]);
+            
+                for (var i = 1; i < resultaat.length; i++) { 
+                    berekenen = berekenen / parseFloat(resultaat[i]);
+                }
+                document.getElementById("result").innerHTML = berekenen;
+            }
         }
 
         // Write your JS code here
